@@ -45,7 +45,7 @@ df.groupby(["State Name"])[["Total Electors", "Total Voters"]].sum()
 fig_Votes_By_State=px.bar(
     Votes_By_State,
     x=Votes_By_State.index,
-    y="Total Electors",
+    y="Total Electors",  "Total Voters"
     title="<b>Votes_By_State</b>",
     color_discrete_sequence=["#c27ba0"] * len(Votes_By_State),
     template="plotly_white",
