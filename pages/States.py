@@ -25,7 +25,7 @@ var_State = st.sidebar.selectbox(
 )
 
 df=df.query(
-  "Male == @var_State"
+  "["State Name"] == @var_State"
 )
 
 # TOP KPI's
