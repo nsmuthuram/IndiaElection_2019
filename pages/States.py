@@ -29,8 +29,8 @@ df_selection=df.query(
 )
 
 # TOP KPI's
-total_electors = int(df_selection["Total Electors"].sum())
-total_voters = int(df_selection["Total Actual Votes"].sum())
+total_electors = int(df["Total Electors"].sum())
+total_voters = int(df["Total Actual Votes"].sum())
 
 # KPI's COLUMNS
 left_column,right_column=st.columns(2)
@@ -49,7 +49,7 @@ st.markdown("---")
 # VOTES BY STATE [BAR CHART]
 
 Votes_By_State=(
-df_selection.groupby(["State Name"])[["Total Electors", "Total Voters"]].sum()
+df.groupby(["State Name"])[["Total Electors", "Total Voters"]].sum()
 )
 
 fig_Votes_By_State=px.bar(
