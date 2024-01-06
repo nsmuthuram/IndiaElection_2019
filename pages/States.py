@@ -26,7 +26,7 @@ df=df.query(
 )
 
 #st.title('2019 General Election - Voter Statistics @var_State')
-st.header('2019 General Election - Voter Statistics {var_State}')
+st.header('2019 General Election - Voter Statistics '{var_State})
 
 
 # TOP KPI's
