@@ -18,7 +18,7 @@ conn = st.connection('s3', type=FilesConnection)
 df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
 # TOP KPI's
-total_population = int(df["Total Electors"].sum())
+total_electors = int(df["Total Electors"].sum())
 total_voters = int(df["Total Actual Votes"].sum())
 
 
@@ -26,8 +26,8 @@ total_voters = int(df["Total Actual Votes"].sum())
 left_column,right_column=st.columns(2)
 
 with left_column:
-  st.subheader("Total Population:")
-  st.subheader(total_population)
+  st.subheader("Total Electors:")
+  st.subheader(total_electors)
 with right_column:
   st.subheader("Total Voters")
   st.subheader(total_voters)
