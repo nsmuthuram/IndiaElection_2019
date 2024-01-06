@@ -52,7 +52,9 @@ fig_Votes_By_State=px.bar(
 
 
 # Displaying charts
-plotly_chart(fig_Votes_By_State,use_container_width=True)
+# Displaying charts
+left_column,right_column=st.columns(2)
+left_column.plotly_chart(fig_Votes_By_State,use_container_width=True)
 
 
 # HIDE STREAMLIT STYLE
