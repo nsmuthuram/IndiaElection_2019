@@ -24,7 +24,9 @@ var_State = st.sidebar.selectbox(
   index=0, 
 )
 
-
+df=df.query(
+  "Male == @var_State"
+)
 
 # TOP KPI's
 total_electors = int(df["Total Electors"].sum())
