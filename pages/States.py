@@ -56,7 +56,7 @@ fig_Votes_By_State=px.bar(
     Votes_By_State,
     x=Votes_By_State.index,
     y=["Total_Electors", "Total_Voters"],
-    title="<b>Electors_and_Voters_By_@var_State</b>",
+    title="<b>Electors_and_Voters_By_</b>" @var_State,
     #color=["#FF0000", "#0000FF"],
     color_discrete_sequence=["#FF0000", "#0000FF"] * len(Votes_By_State),
     template="plotly_white",
