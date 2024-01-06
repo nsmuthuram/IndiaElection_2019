@@ -17,8 +17,8 @@ conn = st.connection('s3', type=FilesConnection)
 df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
 # TOP KPI's
-total_population = int(df_selection["Total Electors"].sum())
-total_voters = int(df_selection["Total Actual Votes"].sum())
+total_population = int(df["Total Electors"].sum())
+total_voters = int(df["Total Actual Votes"].sum())
 
 
 # KPI's COLUMNS
@@ -38,7 +38,7 @@ st.markdown("---")
 # VOTES BY GENDER [BAR CHART]
 
 Votes_By_Gender=(
-  df_selection.groupby(None)[["Male"]].sum()
+  df.groupby(None)[["Male"]].sum()
 )
 
 fig_Votes_By_Gender = px.bar(
@@ -60,7 +60,7 @@ fig_Votes_By_Gender.update_layout(
 
 # VOTES BY TYPE [BAR CHART]
 
-Votes_By_Type=df_selection.groupby(None)[["EVM Vote"]].sum()
+Votes_By_Type=df.groupby(None)[["EVM Vote"]].sum()
 
 fig_Votes_By_Type=px.bar(
     Votes_By_Type,
