@@ -19,7 +19,7 @@ conn = st.connection('s3', type=FilesConnection)
 df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
 df_selection=df.query(
-  "State Name == Tamil Nadu"
+                    "State Name==Tamil Nadu"
 )
 
 # TOP KPI's
