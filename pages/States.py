@@ -9,9 +9,6 @@ st.set_page_config(
     page_icon=":bar_chart:",
 )
 
-#st.title('2019 General Election - Voter Statistics Tamilnadu')
-st.header('2019 General Election - Voter Statistics Tamilnadu')
-
 # Create connection object and retrieve file contents.
 conn = st.connection('s3', type=FilesConnection)
 
@@ -27,6 +24,10 @@ var_State = st.sidebar.selectbox(
 df=df.query(
   "State_Name == @var_State"
 )
+
+#st.title('2019 General Election - Voter Statistics @var_State')
+st.header('2019 General Election - Voter Statistics @var_State')
+
 
 # TOP KPI's
 total_electors = int(df["Total_Electors"].sum())
