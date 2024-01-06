@@ -8,7 +8,8 @@ st.set_page_config(
     page_icon=":bar_chart:",
 )
 
-st.title('2019 General Election - Voter Statistics India')
+#st.title('2019 General Election - Voter Statistics India')
+st.header('2019 General Election - Voter Statistics India')
 
 # Create connection object and retrieve file contents.
 conn = st.connection('s3', type=FilesConnection)
