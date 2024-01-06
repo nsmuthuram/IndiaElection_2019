@@ -26,10 +26,10 @@ total_voters = int(df["Total Actual Votes"].sum())
 left_column,right_column=st.columns(2)
 
 with left_column:
-  st.subheader(":adult: Total Electors: :adult:")
+  st.subheader("Total Electors: :adult:")
   st.subheader(total_electors)
 with right_column:
-  st.subheader(":adult: :hand: Total Voters :adult: :hand:")
+  st.subheader("Total Voters :adult: :hand:")
   st.subheader(total_voters)
 
 st.markdown("---")
