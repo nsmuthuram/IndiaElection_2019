@@ -25,12 +25,12 @@ var_State = st.sidebar.selectbox(
 )
 
 df=df.query(
-  "['State Name'] == @var_State"
+  "State_Name == @var_State"
 )
 
 # TOP KPI's
-total_electors = int(df["Total Electors"].sum())
-total_voters = int(df["Total Actual Votes"].sum())
+total_electors = int(df["Total_Electors"].sum())
+total_voters = int(df["Total_Actual_Votes"].sum())
 
 # KPI's COLUMNS
 left_column,right_column=st.columns(2)
@@ -49,13 +49,13 @@ st.markdown("---")
 # VOTES BY STATE [BAR CHART]
 
 Votes_By_State=(
-df.groupby(["State Name"])[["Total Electors", "Total Voters"]].sum()
+df.groupby(["State_Name"])[["Total_Electors", "Total_Voters"]].sum()
 )
 
 fig_Votes_By_State=px.bar(
     Votes_By_State,
     x=Votes_By_State.index,
-    y=["Total Electors", "Total Voters"],
+    y=["Total_Electors", "Total_Voters"],
     title="<b>Electors_and_Voters_By_Tamilnadu</b>",
     #color=["#FF0000", "#0000FF"],
     color_discrete_sequence=["#FF0000", "#0000FF"] * len(Votes_By_State),
