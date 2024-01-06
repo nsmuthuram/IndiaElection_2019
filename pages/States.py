@@ -20,7 +20,7 @@ df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
 var_State = st.sidebar.selectbox(
   "Select the State:",
-  options=df["State Name"].unique(),
+  options=df["State_Name"].unique(),
   index=0, 
 )
 
