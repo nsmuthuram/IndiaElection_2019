@@ -18,8 +18,8 @@ conn = st.connection('s3', type=FilesConnection)
 df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
 # TOP KPI's
-total_electors = int(df["Total Electors"].sum())
-total_voters = int(df["Total Actual Votes"].sum())
+total_electors = int(df["Total_Electors"].sum())
+total_voters = int(df["Total_Actual_Votes"].sum())
 
 
 # KPI's COLUMNS
@@ -39,13 +39,13 @@ st.markdown("---")
 # VOTES BY STATE [BAR CHART]
 
 Votes_By_State=(
-df.groupby(["State Name"])[["Total Electors", "Total Voters"]].sum()
+df.groupby(["State_Name"])[["Total_Electors", "Total_Voters"]].sum()
 )
 
 fig_Votes_By_State=px.bar(
     Votes_By_State,
     x=Votes_By_State.index,
-    y=["Total Electors", "Total Voters"],
+    y=["Total_Electors", "Total_Voters"],
     title="<b>Electors_and_Voters_By_State</b>",
     #color=["#FF0000", "#0000FF"],
     color_discrete_sequence=["#FF0000", "#0000FF"] * len(Votes_By_State),
