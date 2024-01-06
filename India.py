@@ -39,7 +39,8 @@ st.markdown("---")
 # VOTES BY STATE [BAR CHART]
 
 Votes_By_State=(
-df.groupby(["State Name"])[["Total Electors"]].sum()
+df.groupby(["State Name"])[["Total Electors"]].sum(), [["Total Electors"]].sum()
+
 )
 
 fig_Votes_By_State=px.bar(
