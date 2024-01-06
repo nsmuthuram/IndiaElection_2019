@@ -18,7 +18,7 @@ conn = st.connection('s3', type=FilesConnection)
 # Specify input format is a csv and to cache the result for 600 seconds.
 df = conn.read("msawsbuckets3/Votes 2019.csv", input_format="csv", ttl=600)
 
-var_State st.sidebar.multiselect(
+var_State = st.sidebar.multiselect(
   "Select the State:",
   options=df["State Name"].unique(),
   default=df["State Name"].unique()
