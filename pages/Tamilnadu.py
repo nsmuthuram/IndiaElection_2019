@@ -25,7 +25,7 @@ var_State = st.sidebar.multiselect(
 )
 
 df_selection=df.query(
-  "City== @var_State"
+  "State Name== @var_State"
 )
 
 
