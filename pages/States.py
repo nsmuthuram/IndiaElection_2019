@@ -5,7 +5,7 @@ import plotly.express as px
 import pandas as pd
 
 st.set_page_config(
-    page_title=":bar_chart: 2019 General Election - Voter Statistics Tamilnadu",
+    page_title=":bar_chart: 2019 General Election - Voter Statistics State",
     page_icon=":bar_chart:",
 )
 
@@ -26,7 +26,7 @@ df=df.query(
 )
 
 #st.title('2019 General Election - Voter Statistics @var_State')
-st.header('2019 General Election - Voter Statistics @var_State')
+st.header('2019 General Election - Voter Statistics {var_State}')
 
 
 # TOP KPI's
