@@ -43,7 +43,7 @@ Votes_By_Gender=(
 
 fig_Votes_By_Gender = px.bar(
     Votes_By_Gender,
-    x="Total",
+    x="Total Electors",
     y=Votes_By_Gender.index,
     orientation="h",
     title="<b>Votes_By_Gender</b>",
@@ -67,7 +67,7 @@ df.groupby(["State Name"])[["Total Electors"]].sum()
 fig_Votes_By_Type=px.bar(
     Votes_By_Type,
     x=Votes_By_Type.index,
-    y="Total",
+    y="Total Electors",
     title="<b>Votes_By_Type</b>",
     color_discrete_sequence=["#c27ba0"] * len(Votes_By_Type),
     template="plotly_white",
