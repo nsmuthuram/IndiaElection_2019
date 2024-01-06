@@ -29,7 +29,7 @@ with left_column:
   st.subheader(":adult: Total Electors: :adult:")
   st.subheader(total_electors)
 with right_column:
-  st.subheader("Total Voters")
+  st.subheader(":adult: :hand: Total Voters :adult: :hand:")
   st.subheader(total_voters)
 
 st.markdown("---")
