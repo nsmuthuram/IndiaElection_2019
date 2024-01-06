@@ -35,49 +35,24 @@ st.markdown("---")
 
 # BARCHARTS
 
-# VOTES BY GENDER [BAR CHART]
+# VOTES BY STATE [BAR CHART]
 
-Votes_By_Gender=(
-  df.groupby(["State Name"])[["Total Electors"]].sum()
-)
-
-fig_Votes_By_Gender = px.bar(
-    Votes_By_Gender,
-    x="Total Electors",
-    y=Votes_By_Gender.index,
-    orientation="h",
-    title="<b>Votes_By_Gender</b>",
-    color_discrete_sequence=["#c27ba0"] * len(Votes_By_Gender),
-    #Colour of Chart
-    template="plotly_white",
-)
-
-fig_Votes_By_Gender.update_layout(
-    plot_bgcolor="rgba(0,0,0,0)",
-    xaxis=(dict(showgrid=False))
-)
-
-
-# VOTES BY TYPE [BAR CHART]
-
-Votes_By_Type=(
+Votes_By_State=(
 df.groupby(["State Name"])[["Total Electors"]].sum()
 )
 
-fig_Votes_By_Type=px.bar(
-    Votes_By_Type,
-    x=Votes_By_Type.index,
+fig_Votes_By_State=px.bar(
+    Votes_By_State,
+    x=Votes_By_State.index,
     y="Total Electors",
-    title="<b>Votes_By_Type</b>",
-    color_discrete_sequence=["#c27ba0"] * len(Votes_By_Type),
+    title="<b>Votes_By_State</b>",
+    color_discrete_sequence=["#c27ba0"] * len(Votes_By_State),
     template="plotly_white",
 )
 
 
 # Displaying charts
-left_column,right_column=st.columns(2)
-left_column.plotly_chart(fig_Votes_By_Gender,use_container_width=True)
-right_column.plotly_chart(fig_Votes_By_Type,use_container_width=True)
+plotly_chart(fig_Votes_By_State,use_container_width=True)
 
 
 # HIDE STREAMLIT STYLE
