@@ -38,7 +38,7 @@ st.markdown("---")
 # VOTES BY GENDER [BAR CHART]
 
 Votes_By_Gender=(
-  df.groupby(None)[["Male"]].sum()
+  df.groupby([None])[["Male"]].sum()
 )
 
 fig_Votes_By_Gender = px.bar(
@@ -60,7 +60,7 @@ fig_Votes_By_Gender.update_layout(
 
 # VOTES BY TYPE [BAR CHART]
 
-Votes_By_Type=df.groupby(None)[["EVM Vote"]].sum()
+Votes_By_Type=df.groupby([None])[["EVM Vote"]].sum()
 
 fig_Votes_By_Type=px.bar(
     Votes_By_Type,
